@@ -1,0 +1,15 @@
+version: '3.4'
+services:
+  super-app-db:
+    image: mysql:8.0.28
+    environment:
+      MYSQL_DATABASE: 'super-app'
+      MYSQL_ROOT_PASSWORD: 'SuperApp1'
+    ports:
+      - '3306:3306'
+    expose:
+      - '3306'
+  super-app-node:
+      build: ./node
+      ports:
+        - "3000:3000"
